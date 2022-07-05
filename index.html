@@ -32,8 +32,8 @@
                     <div  @click="btnScrolling(false)" class="prev"></div>
                     <div @click="btnScrolling(true)" class="next"></div>
 
-                    <div v-for="(element , index ) in slides" class="thumb" :class="{ active: index === 0 }" >
-                        <img src="" alt="Svezia"/>
+                    <div v-for="(element , index ) in slides" class="thumb" :class="{ active: index === element[index] }" >
+                        <img :src="element.image" alt="Svezia"/>
                     </div>
                     
                     </div>
