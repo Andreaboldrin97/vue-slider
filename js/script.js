@@ -7,6 +7,9 @@ const app = new Vue({
     data : {
         //? dichiaro l'index come parametro di riferimento
         index : 0,
+        elementActive : '',
+        //? creo la instruzione timingfunction
+        timingFunction : '',
         //* creo il contenitore slides contenente tutte le indicazione delle img
         slides :  [
                         {
@@ -38,7 +41,9 @@ const app = new Vue({
     },
     //! creo i methods
     methods : {
+        //? creo la funzione per i btn
          btnScrolling : function(isNext){
+             
             //* creo un ternary operetor per vedere se il btn e next o previus
             this.index = (isNext) ? (this.index + 1) : (this.index - 1);
             //* creo un if per il ciclo infinito
@@ -47,10 +52,40 @@ const app = new Vue({
             } else if (this.index === -1){
                 this.index = this.slides.length -1;
             }
+            
             return this.index;
          },
-         thumbnailsClick : function(){
 
-         }
+         //? creo le funzioni per ogni singola img associandogli il valore inerente
+         thumbnail1 : function(){
+             this.index = 0;
+         },
+         thumbnail2 : function(){
+            this.index = 1;
+         },
+         thumbnail3 : function(){
+            this.index = 2;
+         },
+         thumbnail4 : function(){
+            this.index = 3;
+         },
+         thumbnail5 : function(){
+            this.index = 4;
+         },
+
+         //? creo la funzione per il setINterval
+         timer : function(){
+            this.timingFunction = setInterval( this.btnScrolling  , 3000 , true);
+        },
+          //? creo la funzione per lo stop del setINterval
+          timer : function(){
+            this.timingFunction = setInterval( this.btnScrolling  , 3000 , true);
+        },
+
+    },
+    //! creata l'istanza Vue, l'hook created () ,
+    //! consente di aggiungere codice da eseguire direttamente sulla pagina
+    created (){
+        this.timer();
     }
 })

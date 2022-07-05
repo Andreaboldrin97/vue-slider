@@ -31,19 +31,20 @@
                 <div class="thumbs">
                     <div  @click="btnScrolling(false)" class="prev"></div>
                     <div @click="btnScrolling(true)" class="next"></div>
-                    <div class="thumb active">
+                    
+                    <div @click="thumbnail1()" class="thumb" :class="elementActive">
                         <img src="img/01.jpg" alt="Svezia"/>
                     </div>
-                    <div class="thumb">
+                    <div @click="thumbnail2()" class="thumb" :class="elementActive">
                         <img src="img/02.jpg" alt="Svizzera" />
                     </div>
-                    <div class="thumb">
+                    <div @click="thumbnail3()" class="thumb" :class="elementActive">
                         <img src="img/03.jpg" alt="Gran Bretagna" />
                     </div>
-                    <div class="thumb">
+                    <div @click="thumbnail4()" class="thumb" :class="elementActive">
                         <img src="img/04.jpg" alt="Germania" />
                     </div>
-                    <div class="thumb">
+                    <div @click="thumbnail5()" class="thumb" :class="elementActive">
                         <img src="img/05.jpg" alt="Paradise" />
                     </div>
                 </div>
