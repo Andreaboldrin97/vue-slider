@@ -7,7 +7,7 @@ const app = new Vue({
     data : {
         //? dichiaro l'index come parametro di riferimento
         index : 0,
-        elementActive : '',
+        isActive : '',
         //? creo la instruzione timingfunction
         timingFunction : '',
         //* creo il contenitore slides contenente tutte le indicazione delle img
@@ -52,35 +52,19 @@ const app = new Vue({
             } else if (this.index === -1){
                 this.index = this.slides.length -1;
             }
-            
             return this.index;
          },
 
          //? creo le funzioni per ogni singola img associandogli il valore inerente
-         thumbnail1 : function(){
-             this.index = 0;
-         },
-         thumbnail2 : function(){
-            this.index = 1;
-         },
-         thumbnail3 : function(){
-            this.index = 2;
-         },
-         thumbnail4 : function(){
-            this.index = 3;
-         },
-         thumbnail5 : function(){
-            this.index = 4;
-         },
-
+         
          //? creo la funzione per il setINterval
          timer : function(){
             this.timingFunction = setInterval( this.btnScrolling  , 3000 , true);
         },
           //? creo la funzione per lo stop del setINterval
-          timer : function(){
-            this.timingFunction = setInterval( this.btnScrolling  , 3000 , true);
-        },
+        stopTimer : function(){
+            clearInterval(this.timingFunction);
+        }
 
     },
     //! creata l'istanza Vue, l'hook created () ,
