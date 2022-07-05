@@ -54,9 +54,10 @@ const app = new Vue({
             }
             return this.index;
          },
-
-         //? creo le funzioni per ogni singola img associandogli il valore inerente
-         
+         //? creo le funzione dove associo il valore di index dell'array al volare index degli elementi della thuberList
+         thunber : function(indexElement){
+             this.index = indexElement;
+         },
          //? creo la funzione per il setINterval
          timer : function(){
             this.timingFunction = setInterval( this.btnScrolling  , 3000 , true);
