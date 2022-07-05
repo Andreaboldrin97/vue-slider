@@ -7,7 +7,6 @@ const app = new Vue({
     data : {
         //? dichiaro l'index come parametro di riferimento
         index : 0,
-        isActive : '',
         //? creo la instruzione timingfunction
         timingFunction : '',
         //* creo il contenitore slides contenente tutte le indicazione delle img
@@ -65,6 +64,14 @@ const app = new Vue({
           //? creo la funzione per lo stop del setINterval
         stopTimer : function(){
             clearInterval(this.timingFunction);
+        },s
+        //? creo la funzione isActive indocando :
+        //? ce se il valore di index è uguale allo stesso valore dell'index della thumbs,
+        //? allora isActive ha come valore true 
+        isActive : function(indexElement){
+            if(this.index === indexElement){
+                return true;
+            }
         }
 
     },
