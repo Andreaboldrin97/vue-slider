@@ -64,7 +64,7 @@ const app = new Vue({
           //? creo la funzione per lo stop del setINterval
         stopTimer : function(){
             clearInterval(this.timingFunction);
-        },s
+        },
         //? creo la funzione isActive indocando :
         //? ce se il valore di index è uguale allo stesso valore dell'index della thumbs,
         //? allora isActive ha come valore true 
