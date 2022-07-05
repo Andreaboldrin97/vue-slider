@@ -39,7 +39,6 @@ const app = new Vue({
     //! creo i methods
     methods : {
          btnScrolling : function(isNext){
-
             //* creo un ternary operetor per vedere se il btn e next o previus
             this.index = (isNext) ? (this.index + 1) : (this.index - 1);
             //* creo un if per il ciclo infinito
@@ -50,5 +49,8 @@ const app = new Vue({
             }
             return this.index;
          },
+         thumbnailsClick : function(){
+
+         }
     }
 })
