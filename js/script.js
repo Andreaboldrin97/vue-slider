@@ -8,7 +8,7 @@ const app = new Vue({
         //? dichiaro l'index come parametro di riferimento
         index : 0,
         //? creo la instruzione timingfunction
-        timingFunction : '',
+        timingFunction : null,
         //* creo il contenitore slides contenente tutte le indicazione delle img
         slides :  [
                         {
@@ -59,11 +59,17 @@ const app = new Vue({
          },
          //? creo la funzione per il setINterval
          timer : function(){
-            this.timingFunction = setInterval( this.btnScrolling  , 3000 , true);
+            // this.timingFunction = setInterval( this.btnScrolling  , 3000 , true);
+            if (this.timingFunction === null){
+                this.timingFunction = setInterval(()=> {
+                    this.btnScrolling(true);
+                }, 3000);
+            } 
         },
           //? creo la funzione per lo stop del setINterval
         stopTimer : function(){
             clearInterval(this.timingFunction);
+            this.timingFunction = null;
         },
         //? creo la funzione isActive indocando :
         //? ce se il valore di index è uguale allo stesso valore dell'index della thumbs,
